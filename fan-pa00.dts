@@ -1,0 +1,43 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "allwinner,sun8i-h2-plus";
+
+    // This device tree overlay sets up your fan GPIO as a "gpio-leds"
+    // 
+    // This lets us name it and easily set its value
+    // 
+    // A better implementation would use it as a "gpio-fan" with a cooling zone
+    // but there is no w1-therm device tree binding, so I don't see how to wire
+    // them together.
+    //
+    // This example is for Orange Pi Zero on Armbian
+    // It sets pin PA0 as the fan pin, output mode, default high
+
+	fragment@0 {
+		target = <&pio>;
+		__overlay__ {
+			fan_0: fan_0 {
+				pins = "PA00";
+				function = "gpio_out";
+				output-high;
+			};
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+		__overlay__ {
+            leds {
+                compatible = "gpio-leds";
+
+                fan_0 {
+                    label = "fan_0";
+                    gpios =  <&pio 0 0 0>; // port A=0 pin0=0 output=0
+                    default-state = "on";
+                };
+            };
+		};
+	};
+};
