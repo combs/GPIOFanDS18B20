@@ -19,3 +19,4 @@ while sleep 1
 do nice --3 $PYTHON -u $SCRIPT $ARGS
 echo Exited $?... exit number $COUNTER
 let "COUNTER++"
+done
