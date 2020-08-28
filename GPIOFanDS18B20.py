@@ -2,7 +2,7 @@ import os, glob, time, signal, sys
 
 high = 50
 low = 40
-state = 0
+state = 1 # default device status. Comes from device tree
 interval = 5 
 fan = "/sys/class/leds/fan_0/brightness"
 DEBUG = True
