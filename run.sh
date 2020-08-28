@@ -4,7 +4,7 @@ set -o allexport
 
 OURPATH="`dirname $0`"
 set +o allexport
-SCRIPT="$OURPATH/GPIOFansDS18B20.py"
+SCRIPT="$OURPATH/GPIOFanDS18B20.py"
 ARGS=" "
 COUNTER=1
 PYTHON=python3

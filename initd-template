@@ -8,7 +8,7 @@
 # Description:       <DESCRIPTION>
 ### END INIT INFO
 
-SCRIPT="/root/git/GPIOFansDS18B20/run.sh 2>&1 | ts '%F %T'"
+SCRIPT="/root/git/GPIOFanDS18B20/run.sh 2>&1 | ts '%F %T'"
 RUNAS=root
 
 PIDFILE=/var/run/`basename $0`.pid

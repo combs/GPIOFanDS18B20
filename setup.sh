@@ -3,7 +3,7 @@
 LOGROTATE=yes
 INIT_SCRIPT=yes
 INIT_SCRIPT_AUTO_START=yes
-NAME_LOWER=gpiofansds18b20
+NAME_LOWER=gpiofands18b20
 
 
 if [ "$UID" -ne "0" ]
